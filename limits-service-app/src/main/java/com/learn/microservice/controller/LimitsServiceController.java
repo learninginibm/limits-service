@@ -5,12 +5,18 @@ import java.util.Map;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.learn.microservice.config.Loggable;
 import com.learn.microservice.exception.ApplicationException;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
+@Loggable
 public class LimitsServiceController implements ILimitsServiceController {
 
 	public Map<String, Object> getAllMessages() {
+		log.info("getAllMessages started");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("1", "A");
 		map.put("2", "Z");
